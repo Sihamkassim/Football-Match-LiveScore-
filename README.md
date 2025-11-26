@@ -1,51 +1,54 @@
 # ⚽ Football Match Live Score Streaming
 
-A real-time football match tracking platform built using **Server-Sent Events (SSE)**, **Express.js**, and **React + TypeScript**. The system simulates multiple ongoing football matches and streams live updates (goals, scorers, score changes) to all connected clients instantly — without refreshing the page.
+A real-time football match tracking platform with **Server-Sent Events (SSE)**, **Express.js**, **React + TypeScript**, and **Tailwind CSS**. Watch live scores update instantly without refreshing!
 
-## 🚀 Features
+## 🚀 Quick Start
 
-### 🔹 User Features
-- View all currently active football matches
-- Open any match to watch live score updates
-- See goals and scorers appear instantly
-- Fully real-time using SSE (no polling, no refresh)
+### Installation
 
-### 🔹 Admin Features
-- Update match score
-- Add goals and scorer names
-- Instantly broadcast updates to all users watching the match
+1. **Install Backend:**
+```cmd
+cd backend
+npm install
+```
 
-### 🔹 Technical Features
-- Express.js backend with TypeScript
-- Real-time broadcasting using Server-Sent Events (SSE)
-- React + TypeScript frontend with Vite
-- Clean modular structure
-- No database required (in-memory matches)
-- Easy to expand into a real football tracking system
+2. **Install Frontend:**
+```cmd
+cd frontend
+npm install
+```
 
-## 🧠 Why SSE?
+### Run the App
 
-Unlike regular API apps that send JSON only when the user requests it, SSE keeps a persistent connection from server → client. This allows the backend to push updates instantly, making it perfect for:
-- Live sports
-- Stock price tickers
-- Chat message notifications
-- Realtime dashboards
+1. **Start Backend:**
+```cmd
+cd backend
+npm run dev
+```
+Backend: `http://localhost:5000`
 
-SSE is lightweight, reliable, and supported by browsers without extra libraries.
+2. **Start Frontend (new terminal):**
+```cmd
+cd frontend
+npm run dev
+```
+Frontend: `http://localhost:3000`
+
+3. **Open Browser:** `http://localhost:3000`
+
+## 🎯 Features
+
+✅ Real-time score updates using SSE  
+✅ Beautiful UI with Tailwind CSS  
+✅ Admin panel for match management  
+✅ Instant broadcasting to all clients  
+✅ TypeScript for type safety  
+✅ Simple, clean structure  
 
 ## 🏗️ Tech Stack
 
-### Backend
-- Node.js
-- Express.js
-- TypeScript
-- Server-Sent Events (SSE)
-
-### Frontend
-- React 18
-- Vite
-- TypeScript
-- React Router
+**Backend:** Node.js + Express + TypeScript + SSE  
+**Frontend:** React + Vite + TypeScript + Tailwind CSS + React Router
 
 ## 📂 Project Structure
 
