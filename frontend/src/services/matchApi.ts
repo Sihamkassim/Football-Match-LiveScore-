@@ -47,4 +47,25 @@ export const matchApi = {
     if (!response.ok) throw new Error('Failed to end match');
     return response.json();
   }
+,
+
+  // Admin: Create a new match
+  async createMatch(homeTeam: string, awayTeam: string, status: 'live' | 'scheduled' | 'finished' = 'scheduled'): Promise<Match> {
+    const response = await fetch(`${API_BASE_URL}/matches`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ homeTeam, awayTeam, status })
+    });
+    if (!response.ok) throw new Error('Failed to create match');
+    return response.json();
+  },
+
+  // Admin: Delete match
+  async deleteMatch(id: string): Promise<{ success: boolean }> {
+    const response = await fetch(`${API_BASE_URL}/matches/${id}`, {
+      method: 'DELETE'
+    });
+    if (!response.ok) throw new Error('Failed to delete match');
+    return response.json();
+  }
 };

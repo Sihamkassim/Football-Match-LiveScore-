@@ -2,12 +2,54 @@ import { Request, Response } from 'express';
 import { getAllMatches, getMatchById, updateMatch } from '../data/matches';
 import { sseService } from '../services/sseService';
 import { Goal, Match, MatchUpdateEvent } from '../types/match';
+import { addMatch, deleteMatch } from '../data/matches';
 
 export const matchController = {
   // Get all matches
   getAllMatches(req: Request, res: Response) {
     const matches = getAllMatches();
     res.json(matches);
+  },
+
+  // Admin: Create a new match
+  createMatch(req: Request, res: Response) {
+    const { homeTeam, awayTeam, status, startTime } = req.body;
+
+    if (!homeTeam || !awayTeam) {
+      return res.status(400).json({ error: 'homeTeam and awayTeam are required' });
+    }
+
+    const newMatch: Match = {
+      id: Date.now().toString(),
+      homeTeam,
+      awayTeam,
+      homeScore: 0,
+      awayScore: 0,
+      status: status || 'scheduled',
+      startTime: startTime ? new Date(startTime) : new Date(),
+      goals: []
+    };
+
+    addMatch(newMatch);
+
+    res.status(201).json(newMatch);
+  },
+
+  // Admin: Delete a match
+  deleteMatch(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const existing = getMatchById(id);
+    if (!existing) {
+      return res.status(404).json({ error: 'Match not found' });
+    }
+
+    const ok = deleteMatch(id);
+    if (!ok) {
+      return res.status(500).json({ error: 'Failed to delete match' });
+    }
+
+    res.json({ success: true });
   },
 
   // Get a single match by ID

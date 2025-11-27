@@ -16,5 +16,8 @@ router.get('/matches/:id/stream', matchController.streamMatch);
 router.put('/matches/:id/score', matchController.updateScore);
 router.post('/matches/:id/goals', matchController.addGoal);
 router.put('/matches/:id/end', matchController.endMatch);
+// Create and delete matches (admin)
+router.post('/matches', matchController.createMatch);
+router.delete('/matches/:id', matchController.deleteMatch);
 
 export default router;

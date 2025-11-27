@@ -87,3 +87,12 @@ export const updateMatch = (id: string, updatedMatch: Match): Match | undefined 
   }
   return undefined;
 };
+
+export const addMatch = (match: Match): Match => {
+  matches.set(match.id, match);
+  return match;
+};
+
+export const deleteMatch = (id: string): boolean => {
+  return matches.delete(id);
+};
