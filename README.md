@@ -191,6 +191,10 @@ This project is open source and available under the MIT License.
 
 Built with ❤️ using Server-Sent Events
 
+## 🎥 Video Walkthrough
+
+[Watch the video walkthrough](Video-walkthrough/video.mp4)
+
 ---
  some screenshots of the project 
  <img width="1000" height="970" alt="image" src="https://github.com/user-attachments/assets/acf2316a-f7a3-454b-aca4-180aa73d3011" />
