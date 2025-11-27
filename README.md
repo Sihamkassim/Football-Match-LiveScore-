@@ -193,7 +193,9 @@ Built with ❤️ using Server-Sent Events
 
 ## 🎥 Video Walkthrough
 
-<video src="Video-walkthrough/video.mp4" controls="controls" width="100%"></video>
+Click the link below to watch the walkthrough:
+
+[▶️ Watch Video Walkthrough](Video-walkthrough/video.mp4)
 
 ---
  some screenshots of the project 
