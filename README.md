@@ -192,6 +192,9 @@ This project is open source and available under the MIT License.
 Built with ❤️ using Server-Sent Events
 
 ---
+ some screenshots of the project 
+ <img width="1000" height="970" alt="image" src="https://github.com/user-attachments/assets/acf2316a-f7a3-454b-aca4-180aa73d3011" />
+<img width="1000" height="964" alt="image" src="https://github.com/user-attachments/assets/e47f50fe-c892-4f08-b5dc-3aaeaa9a76bc" />
 
 **Enjoy real-time football streaming!** ⚽🔥
 "# Football-Match-LiveScore-" 
